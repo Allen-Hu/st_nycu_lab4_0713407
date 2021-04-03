@@ -25,7 +25,9 @@ jobs:
     - name: Cache compile output
       uses: actions/cache@v2
       with:
-        path: ./build
+        path: |
+          ./build
+          ~/.gradle
         key: ${{ runner.os }}-compile
   test:
     needs: compile
@@ -41,7 +43,9 @@ jobs:
     - name: Load compile output
       uses: actions/cache@v2
       with:
-        path: ./build
+        path: |
+          ./build
+          ~/.gradle
         key: ${{ runner.os }}-compile
         # no restore-keys here, we only accept this exact version
     
@@ -54,7 +58,9 @@ jobs:
     - name: Cache test output
       uses: actions/cache@v2
       with:
-        path: ./build
+        path: |
+          ./build
+          ~/.gradle
         key: ${{ runner.os }}-test
         
   assemble:
@@ -71,7 +77,9 @@ jobs:
     - name: Load test output
       uses: actions/cache@v2
       with:
-        path: ./build
+        path: |
+          ./build
+          ~/.gradle
         key: ${{ runner.os }}-test
         # no restore-keys here, we only accept this exact version
     
@@ -84,7 +92,9 @@ jobs:
     - name: Cache assemble output
       uses: actions/cache@v2
       with:
-        path: ./build
+        path: |
+          ./build
+          ~/.gradle
         key: ${{ runner.os }}-assemble
     
     - name: Upload jar
@@ -108,7 +118,9 @@ jobs:
     - name: Load assemble output
       uses: actions/cache@v2
       with:
-        path: ./build
+        path: |
+          ./build
+          ~/.gradle
         key: ${{ runner.os }}-assemble
         # no restore-keys here, we only accept this exact version
 
