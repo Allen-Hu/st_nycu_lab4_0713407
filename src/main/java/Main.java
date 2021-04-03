@@ -10,14 +10,14 @@ public class Main {
         System.out.println("Enter Player 1 choice (rock, paper or scissors):");
         var p1 = scanner.nextLine();
         if (!game.valid(p1))
-            throw new IllegalArgumentException("peko");
+            throw new IllegalArgumentException(p1);
         Waza w1 = Waza.valueOf(p1);
 
         // p2
         System.out.println("Enter Player 2 choice (rock, paper or scissors):");
         var p2 = scanner.nextLine();
         if (!game.valid(p1))
-            throw new IllegalArgumentException("A");
+            throw new IllegalArgumentException(p2);
         Waza w2 = Waza.valueOf(p2);
 
         Kekka k = game.duel(w1, w2);
