@@ -113,7 +113,7 @@ jobs:
         # no restore-keys here, we only accept this exact version
 
     - name: Rename release jar
-      run: mv $(ls ./build/libs) st_nycu_$(ls ./build/libs)
+      run: mv ./build/libs/$(ls ./build/libs) ./build/libs/st_nycu_$(ls ./build/libs)
       shell: bash
 
     - name: Release
