@@ -23,7 +23,7 @@ public class Game {
                 return true;
         return false;
     }
-    // return 0: Draw, 1: P1 win, 2: P2 win
+
     Kekka duel(Waza w1, Waza w2) {
         int dif = w1.id() - w2.id();
         if (Math.abs(dif) == 2) dif = ((dif / 2) * -1);
